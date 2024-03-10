@@ -14,6 +14,6 @@ public class MemberRepository {
 
   public int save(MemberDTO memberDTO) {
     System.out.println("memberDTO = " + memberDTO);
-    return sql.insert("Member.save", memberDTO);//Member 매퍼에서 save라는 아이디를 가진 쿼리를 실행하라는 의미
+    return sql.insert("Member.save", memberDTO);
   }
 }
