@@ -2,6 +2,7 @@ package com.study.erum.service;
 
 import org.springframework.stereotype.Service;
 
+import com.study.erum.dto.MemberDTO;
 import com.study.erum.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -13,5 +14,9 @@ public class MemberService {
   
   //MemberRepository 타입의 필드를 선언하고, @RequiredArgsConstructor에 의해 자동 생성된 생성자를 통해 주입
   private final MemberRepository memberRepository;
+
+  public static int save(MemberDTO memberDTO) {
+    return MemberRepository.save(memberDTO);
+  }
   
 }
