@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.study</groupId>
+	<groupId>com.study</groupId><!-- 패키지명과 다르게 해도 실행은 되지만 약속 같은 개념으로 맞춰주는게 좋다. -->
 	<artifactId>controller</artifactId>
 	<name>member_framework</name>
 	<packaging>war</packaging>
@@ -152,6 +152,13 @@
 		    <version>3.2.0</version>
 		</dependency>
 		
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.5</version>
+        </dependency>		
+		
 		<!-- mybatis와 mybatis-spring 버전은 같을 필요하가 없고 조회수가 가장 높은 것으로 받았다. -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -173,8 +180,7 @@
 		    <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 		    <version>1.16</version>
 		</dependency>
-		
-			        
+		        
 	</dependencies>
     <build>
         <plugins>

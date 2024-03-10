@@ -5,7 +5,7 @@
 <mapper namespace="Member"><!-- 매퍼파일에 속하는  네임스페이스 지정 -->
 	<insert id="save" parameterType="member"><!-- save라는 식별자(id)를 가진 쿼리를 정의 -->
 	<!-- parameterType속성은 쿼리에 전달되는 매개변수 타입을 지정. member라는 별칭을 가진 객체를 전달 -->
-		insert into member_table(memberEmail, memberPassword, memberName, memberAge, memberMobile)
-		values (#{memberEmail}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberMobile})
+        insert into member_table(memberEmail, memberPassword, memberName, memberAge, memberMobile)
+        values (#{memberEmail}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberMobile})
 	</insert>
 </mapper>
