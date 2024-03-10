@@ -20,11 +20,13 @@ public class MemberController {
   
   @PostMapping("/save")
   public String save(@ModelAttribute MemberDTO memberDTO) {
+    
+    // MemberService 클래스의 save 메서드를 호출하여 회원 정보를 저장하고 그 결과를 변수에 저장합니다.
     int saveResult = MemberService.save(memberDTO);
-    if(saveResult > 0) {
-      return "login";
-    } else {
-      return "save";
+    if(saveResult > 0) {// 저장에 성공한 경우
+      return "login"; //login페이지로 이동
+    } else { //저장에 실패한 경우
+      return "save"; //회원가입 폼으로 이동
     }
     
   }
