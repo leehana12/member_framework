@@ -14,6 +14,6 @@ public class MemberRepository {
 
   public int save(MemberDTO memberDTO) {
     System.out.println("memberDTO = " + memberDTO);
-    return 0;
+    return sql.insert("Member.save", memberDTO);
   }
 }
