@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DOCTYPE 선언은 XML 문서의 유형과 버전을 정의하는 역할 -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 자바 클래스에 대한 별칭을 설정하기 위한 <typeAliases> 요소. -->
+	<typeAliases>
+		<!-- com.study.erum.dto.MemberDTO 클래스에 대한 별칭을 설정. -->
+		<typeAlias type="com.study.erum.dto.MemberDTO" alias="member" ></typeAlias>
+	</typeAliases>
+</configuration>
