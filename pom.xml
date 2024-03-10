@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.zerock</groupId>
+	<groupId>com.study</groupId>
 	<artifactId>controller</artifactId>
 	<name>member_framework</name>
 	<packaging>war</packaging>
