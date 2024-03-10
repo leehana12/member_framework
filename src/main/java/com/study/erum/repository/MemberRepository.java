@@ -1,5 +1,11 @@
 package com.study.erum.repository;
 
-public class MemberRepository {
+import org.springframework.stereotype.Repository;
 
+import lombok.RequiredArgsConstructor;
+
+@Repository
+@RequiredArgsConstructor
+public class MemberRepository {
+ 
 }
