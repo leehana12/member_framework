@@ -30,4 +30,9 @@ public class MemberRepository {
     // MyBatis를 사용하여 모든 회원의 정보를 데이터베이스에서 가져온 후 리스트로 반환
     return sql.selectList("Member.findAll");
   }
+
+  public MemberDTO findById(Long id) {
+    // MyBatisdml SelectOne()메서드로 id값으로 회원정보 반환
+    return sql.selectOne("Member.findById", id);
+  }
 }
