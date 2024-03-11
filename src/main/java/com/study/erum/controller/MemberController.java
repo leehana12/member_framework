@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.study.erum.dto.MemberDTO;
 import com.study.erum.service.MemberService;
@@ -74,4 +75,20 @@ public class MemberController {
     return "list";//list.jsp(뷰)로 이동하여 회원 목록 표시
   }
   
+  // '/member?id=1
+  @GetMapping
+  public String findById(@RequestParam("id") Long id, Model model) {
+    // ID에 해당하는 회원 정보를 MemberService를 통해 조회
+    MemberDTO memberDTO = memberService.findById(id);
+    
+    // 조회된 회원정보를 member라는 이름으로 Model에 추가하여 뷰에 전달
+    model.addAttribute("member", memberDTO);
+    return "detail"; // 회원 상세 정보를 보여주는 뷰페이지의 이름인 detail을 반환.
+  }
 }
+
+
+
+
+
+
