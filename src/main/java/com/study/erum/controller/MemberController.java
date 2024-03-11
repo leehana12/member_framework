@@ -101,6 +101,20 @@ public class MemberController {
     //회원 삭제후, 회원 목록 페이지로 리다이렉트.
     return "redirect:/member/list";
   }
+  
+  //수정화면 요청
+  @GetMapping("/update")
+  public String updateFrom(HttpSession session, Model model) {
+    //세션에 저장된 이메일 가져오기
+    String loginEmail = (String) session.getAttribute("loginEmail");
+    
+    //MemberService 클래스의 findByMemberEmail 메서드를 호출하여 현재 로그인한 회원 정보를 가져옴.
+    MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
+    
+    // 가져온 회원 정보를 "member"라는 이름으로 모델에 추가하여 update.jsp(뷰)로 전달
+    model.addAttribute("member", memberDTO);
+    return "update"; // update 문자열 반환. update.jsp로 이동.
+  }
 }
 
 
