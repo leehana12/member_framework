@@ -39,5 +39,10 @@ public class MemberService {
     // MemberRepository를 통해 모든 회원 정보를 가져와서 반환
     return memberRepository.findAll();
   }
+  
+  //db에서 회원 id로 회원정보 조회하여 반환
+  public MemberDTO findById(Long id) {
+    return memberRepository.findById(id);
+  }
 
 }
