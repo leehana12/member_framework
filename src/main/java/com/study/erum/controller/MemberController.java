@@ -1,8 +1,11 @@
 package com.study.erum.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,4 +63,15 @@ public class MemberController {
       return "login"; //login 뷰로 이동.(jsp)
     }
   }
+  
+  @GetMapping("/") // HTTP GET 메서드로 "/member/" 요청을 처리하는 메서드
+  public String findAll(Model model) {
+    //MemberService 클래스의 findAll 메서드를 호출하여 모든 회원 정보를 가져옴.
+    List<MemberDTO> memberDTOList = memberService.findAll();
+    
+    //가져온 회원정보를 "memberList"라는 이름으로 모델에 추가하여 뷰(jsp)로 전달.
+    model.addAttribute("memberList", memberDTOList);
+    return "list";//list.jsp(뷰)로 이동하여 회원 목록 표시
+  }
+  
 }
