@@ -43,10 +43,10 @@ public class MemberController {
     return "login";
   }
   
-  @PostMapping("/login")//HTTP POST 메서드로 "/login" 요청을 처리하는 메서드이며, 실제 로그인 기능을 수행
   //@ModelAttribute MemberDTO memberDTO는 HTTP 요청 파라미터를 MemberDTO 객체에 바인딩하기 위한 어노테이션
   //사용자가 입력한 로그인 정보를 MemberDTO 객체로 받아옵사용자가 입력한 로그인 정보를 MemberDTO 객체로 받아옴
-  public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+  @PostMapping("/login")//HTTP POST 메서드로 "/login" 요청을 처리하는 메서드이며, 실제 로그인 기능을 수행
+  public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session){
 
     // MemberService 클래스의 login 메서드를 호출하여 로그인을 시도하고 그 결과를 변수에 저장합니다.
     boolean loginResult = memberService.login(memberDTO);

@@ -8,9 +8,16 @@
         insert into member_table(memberEmail, memberPassword, memberName, memberAge, memberMobile)
         values (#{memberEmail}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberMobile})
     </insert>
-    
-    <select id="login" parameterType="member" resultType="member" >
-    	select * from member_table where memberEmail=#{memberEmail}
-    	and memberPassword=#{memberPassword}
+
+
+    <!-- 
+        select 쿼리를 정의.
+        id="login"은 쿼리의 식별자.
+        parameterType="member"는 쿼리에 전달되는 매개 변수의 유형을 지정.
+        resultType="member"는 쿼리의 결과로 반환되는 객체의 유형을 지정.
+        이 쿼리는 member_table에서 memberEmail과 memberPassword에 해당하는 회원을 검색.
+    -->    
+    <select id="login" parameterType="member" resultType="member">
+        select * from member_table where memberEmail=#{memberEmail} and memberPassword=#{memberPassword}
     </select>
 </mapper>

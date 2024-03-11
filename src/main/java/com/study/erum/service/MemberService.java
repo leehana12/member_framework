@@ -25,14 +25,11 @@ public class MemberService {
     // MemberRepository를 통해 로그인을 시도하고 그 결과를 반환
     MemberDTO loginMember = memberRepository.login(memberDTO);
     
-    if (loginMember != null) {// 로그인에 성공한 경우
+    if(loginMember != null){// 로그인에 성공한 경우
       return true;
     } else {// 로그인에 실패한 경우.
       return false;
     }
   }
 
-
-
-  
 }
