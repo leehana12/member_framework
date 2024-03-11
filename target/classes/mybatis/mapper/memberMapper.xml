@@ -25,4 +25,9 @@
     <select id="findAll" resultType="member" >
     	select * from member_table;
     </select>
+    
+    <!-- id로 정보를 조회 하는 쿼리. id 속성은 findById -->
+    <select id="findById" parameterType="Long" resultType="member" >
+    	select * from member_table where id=#{id}
+    </select>
 </mapper>
