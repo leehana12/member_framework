@@ -65,15 +65,22 @@ public class MemberController {
     }
   }
   
-  @GetMapping("/") // HTTP GET 메서드로 "/member/" 요청을 처리하는 메서드
-  public String findAll(Model model) {
-    //MemberService 클래스의 findAll 메서드를 호출하여 모든 회원 정보를 가져옴.
+  @GetMapping("/list")
+  public String list(Model model) {
     List<MemberDTO> memberDTOList = memberService.findAll();
-    
-    //가져온 회원정보를 "memberList"라는 이름으로 모델에 추가하여 뷰(jsp)로 전달.
     model.addAttribute("memberList", memberDTOList);
-    return "list";//list.jsp(뷰)로 이동하여 회원 목록 표시
+    return "list";
   }
+  
+  /*
+   * @GetMapping("/") // HTTP GET 메서드로 "/member/" 요청을 처리하는 메서드 public String
+   * findAll(Model model) { //MemberService 클래스의 findAll 메서드를 호출하여 모든 회원 정보를 가져옴.
+   * List<MemberDTO> memberDTOList = memberService.findAll();
+   * 
+   * //가져온 회원정보를 "memberList"라는 이름으로 모델에 추가하여 뷰(jsp)로 전달.
+   * model.addAttribute("memberList", memberDTOList); return "list";//list.jsp(뷰)로
+   * 이동하여 회원 목록 표시 }
+   */
   
   // '/member?id=1
   @GetMapping
@@ -84,6 +91,15 @@ public class MemberController {
     // 조회된 회원정보를 member라는 이름으로 Model에 추가하여 뷰에 전달
     model.addAttribute("member", memberDTO);
     return "detail"; // 회원 상세 정보를 보여주는 뷰페이지의 이름인 detail을 반환.
+  }
+  
+  @GetMapping("/delete")
+  public String delete(@RequestParam("id") Long id) {
+    //회원 삭제 메소드호출. 선택한 id의 회원 삭제
+    memberService.delete(id);
+    
+    //회원 삭제후, 회원 목록 페이지로 리다이렉트.
+    return "redirect:/member/";
   }
 }
 

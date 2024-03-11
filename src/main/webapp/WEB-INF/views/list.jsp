@@ -20,7 +20,8 @@
 			<th>삭제</th>
 		</tr>
 		<!-- jstl라이브러이의 forEach를 사용하여 회원 목록을 반복하여 테이블에 출력 -->
-		<c:forEach items="${memberList}" var="member">
+		<c:forEach items="${memberList}" var="member" >
+		
 			<tr>
 				<!-- 회원정보 출력 -->
 				<td>${member.id}</td>
