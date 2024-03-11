@@ -99,7 +99,7 @@ public class MemberController {
     memberService.delete(id);
     
     //회원 삭제후, 회원 목록 페이지로 리다이렉트.
-    return "redirect:/member/";
+    return "redirect:/member/list";
   }
 }
 
