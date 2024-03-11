@@ -50,4 +50,9 @@ public class MemberService {
     
   }
 
+  // 이메일로 회원을 조회하는 메서드
+  public MemberDTO findByMemberEmail(String loginEmail) {
+    return memberRepository.findByMemberEmail(loginEmail);
+  }
+
 }
