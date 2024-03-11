@@ -37,6 +37,7 @@ public class MemberRepository {
   }
 
   public void delete(Long id) {
+    //선택한 id에 해당하는 회원정보를 db에서 삭제
     sql.delete("Member.delete",id);    
   }
 }
