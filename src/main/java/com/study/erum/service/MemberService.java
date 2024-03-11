@@ -1,5 +1,7 @@
 package com.study.erum.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.study.erum.dto.MemberDTO;
@@ -30,6 +32,12 @@ public class MemberService {
     } else {// 로그인에 실패한 경우.
       return false;
     }
+  }
+
+  //db에 모든 회원 정보를 가져 오는 메소드
+  public List<MemberDTO> findAll() {
+    // MemberRepository를 통해 모든 회원 정보를 가져와서 반환
+    return memberRepository.findAll();
   }
 
 }
