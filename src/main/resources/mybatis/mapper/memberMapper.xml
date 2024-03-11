@@ -20,4 +20,9 @@
     <select id="login" parameterType="member" resultType="member">
         select * from member_table where memberEmail=#{memberEmail} and memberPassword=#{memberPassword}
     </select>
+    
+    <!-- member_table의 모든열을 선택하는 쿼리. id= findAll정의 -->
+    <select id="findAll" resultType="member" >
+    	select * from member_table;
+    </select>
 </mapper>
