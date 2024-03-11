@@ -35,4 +35,8 @@ public class MemberRepository {
     // MyBatisdml SelectOne()메서드로 id값으로 회원정보 반환
     return sql.selectOne("Member.findById", id);
   }
+
+  public void delete(Long id) {
+    sql.delete("Member.delete",id);    
+  }
 }
